@@ -9,15 +9,19 @@
 # 运行全部 62 项自动化测试（无头环境可跑）
 mvn -B clean test
 
-# 启动 GUI（默认加载 src/main/resources/order.json）
-mvn -q compile
-java -cp "target/classes:<fastjson2 jar>" com.dji.ui.DJIOrderApp
+# 启动 GUI（推荐：先把运行期依赖拷到 target/dependency，再用通配符类路径）
+mvn -q compile dependency:copy-dependencies -DincludeScope=runtime -DoutputDirectory=target/dependency
+java -cp "target/classes:target/dependency/*" com.dji.ui.DJIOrderApp
 
-# 或指定订单文件（验收场景 7 可换成含错误数据的 JSON）
-java -cp "target/classes:<fastjson2 jar>" com.dji.ui.DJIOrderApp path/to/order.json
+# 或指定订单文件（验收场景 7 可换成含错误数据的 JSON，如 src/test/resources/fixtures/invalid_orders.json）
+java -cp "target/classes:target/dependency/*" com.dji.ui.DJIOrderApp path/to/order.json
 ```
 
-`<fastjson2 jar>` 位于 `~/.m2/repository/com/alibaba/fastjson2/fastjson2/2.0.65/fastjson2-2.0.65.jar`（Maven 已自动下载）。测试报告在 `target/surefire-reports/`。
+> ⚠️ 不要写成 `-cp "target/classes:~/.m2/..."`——bash 双引号内的 `~` **不会展开**，
+> 会导致 `NoClassDefFoundError: com/alibaba/fastjson2/JSONException`。
+> 若要直接引用本地仓库 jar，请用 `$HOME` 或绝对路径，且注意 fastjson2 与 junit 等可能不止一个 jar。
+
+测试报告在 `target/surefire-reports/`。
 
 ## 二、架构分层（四层六包 + UI）
 
