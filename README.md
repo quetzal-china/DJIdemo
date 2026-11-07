@@ -1,6 +1,6 @@
 # 大疆全球订单生产管理系统｜README 与设计说明
 
-> Java 21 + Maven + Swing。原版任务书：`../G班机试2.md`（业务/评分权威）；架构基线：`docs/ARCHITECTURE_BLUEPRINT.md` v1.0（已获批准）。
+> Java 21 + Maven + Swing。原版任务书：`../G班机试2.md`（业务/评分权威）。
 > 本文档同时承担提交要求中的"设计说明"与"自动化测试及运行说明"。
 
 ## 一、运行与测试
@@ -89,4 +89,4 @@ repository (JsonOrderRepository / OrderValidator)   product (DJIProduct 继承�
 
 ## 八、文档索引
 
-`docs/00-基线与输入清单.md`（真实数据事实与促销 oracle 表）｜`docs/01-需求追踪矩阵.md`（100 分逐项证据）｜`docs/ARCHITECTURE_BLUEPRINT.md`/`IMPLEMENTATION_PLAN.md`（获批架构）｜`docs/DECISIONS.md`（业务裁决与默认方案）｜`docs/PROGRESS.md`（模块日志）｜`docs/VERIFICATION.md`（真实运行证据）｜`docs/HANDOFF_FOR_CHATGPT.md`（伴学交接）｜`docs/AI使用说明.md`（AI 工具使用与验证责任）
+`docs/00-基线与输入清单.md`（真实数据事实与促销 oracle 表）｜`docs/01-需求追踪矩阵.md`（100 分逐项证据）｜`docs/VERIFICATION.md`（真实运行证据与 GUI 验收记录）｜`docs/evidence/`（GUI 七场景实机截图）｜`docs/AI使用说明.md`（AI 工具使用与验证责任）
