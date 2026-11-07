@@ -39,7 +39,7 @@ repository (JsonOrderRepository / OrderValidator)   product (DJIProduct 继承�
 
 **依赖硬约束**：核心六包严禁 import `javax.swing.*`/`java.awt.*`，由 `ArchitectureDecouplingTest` 编译级守护；GUI 监听器只收集输入→调服务→刷新视图，零业务规则。
 
-**与教师代码的兼容**：`DJIProductDemo`（序列号 API 绑定）与 `DJIPromotion`（`com.dji.sale.Order` 签名绑定）**零改动**——`git diff 8f6993b` 可证教师 8 个文件全部原样。
+**与教师代码的兼容**：`DJIProductDemo`（序列号 API 绑定）与 `DJIPromotion`（`com.dji.sale.Order` 签名绑定）**零改动**——`git diff f9ffbea` 可证教师 8 个文件全部原样。
 
 ## 三、设计模式与关键决策
 

@@ -1,8 +1,8 @@
 # PROGRESS｜模块交付事实日志
 
 - 当前阶段：**M1–M8 全部完成**（M7 GUI 代码+冒烟验证；G1–G7 交互验收待用户实机；M8 文档齐备）
-- 当前真实 Git commit：见 `git log`（M7、M8 提交追加于 64e718b/d3101c3 之后）；工作树干净
-- 实际完成的源代码改动：M7 新增 `ui/`（DJIOrderApp/MainFrame/OrderTableModel + 测试）；M8 新增 README.md、docs/AI使用说明.md、矩阵状态更新；教师 8 个源文件**零改动**（git diff 8f6993b 为空）
+- 当前真实 Git commit：见 `git log`（M7、M8 提交追加于 7b78546/0c7ed02 之后）；工作树干净
+- 实际完成的源代码改动：M7 新增 `ui/`（DJIOrderApp/MainFrame/OrderTableModel + 测试）；M8 新增 README.md、docs/AI使用说明.md、矩阵状态更新；教师 8 个源文件**零改动**（git diff f9ffbea 为空）
 - 最新验证状态：`mvn -B clean test` 退出码 0，Tests run: 62, Failures: 0, Errors: 0（2026-11-07）
 - 阻断项：无（唯一开放项 = 用户实机执行 GUI 七场景验收）
 - 下一步：用户实机验收 → （可选）Zed 终审（提示词 04）→ 用户推送 GitHub 与提交
@@ -39,7 +39,7 @@ Git 提交 SHA：见 git log（M8 提交）
 ```text
 ### 2026-11-07｜M1+M2：序列号单例、产品注册表、核心领域模型
 原版评分映射：任务3(10分)+任务1(10分)核心
-Git 提交 SHA：d835f66
+Git 提交 SHA：8e46b08
 真正修改的文件：新增 product/{SerialNumberGenerator, SerialNumberExhaustedException, DroneSpecRegistry}、
   sale/ 全部领域类（5枚举+Customer+OrderItem+Order+PromotionType+PromotionResult+ProductionTask+2异常）；
   教师文件零改动
@@ -52,7 +52,7 @@ Git 提交 SHA：d835f66
 
 ### 2026-11-07｜M3：七基地抽象工厂与集中路由
 原版评分映射：任务4(15分)
-Git 提交 SHA：b6cc38c
+Git 提交 SHA：b6db2ab
 真正修改的文件：新增 factory/{AbstractBaseFactory, 7个基地工厂, ProductionRouter}
 执行的命令与退出码：mvn -B test → 0
 真实测试摘要：15种地区×类别组合与任务书职责表逐格一致；9类越权请求显式拒绝；
@@ -62,7 +62,7 @@ Git 提交 SHA：b6cc38c
 
 ### 2026-11-07｜M4+M5：促销策略与 JSON 导入校验
 原版评分映射：任务5(15分)+任务2(10分)
-Git 提交 SHA：25586c9
+Git 提交 SHA：432b9b2
 真正修改的文件：promotion/ 7 个类；repository/ 4 个类；sale/ 2 个 record；
   fixtures: invalid_orders.json(14类错误)/malformed.json/not_array.json
 执行的命令与退出码：mvn -B test → 0
@@ -74,7 +74,7 @@ Git 提交 SHA：25586c9
 
 ### 2026-11-07｜M6：Stream 查询统计与生产编排服务
 原版评分映射：任务7(15分)+任务4/6服务层
-Git 提交 SHA：64e718b
+Git 提交 SHA：7b78546
 真正修改的文件：service/ 6 个类 + 3 个测试类
 执行的命令与退出码：mvn -B test → 0（全量 58 tests）
 真实测试摘要：多条件组合筛选(含U+200C客户名命中)/groupingBy地区统计/分币种优惠汇总

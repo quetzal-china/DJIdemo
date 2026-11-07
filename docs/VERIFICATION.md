@@ -56,7 +56,7 @@ JDK/构建环境：Temurin OpenJDK 21.0.12.1（SDKMAN）+ Apache Maven 3.10.0，
 
 ```text
 ### 2026-11-07 11:30｜M1–M6 全量回归
-Commit/工作树：64e718b（M6）＋前序 d835f66/b6cc38c/25586c9；工作树干净
+Commit/工作树：7b78546（M6）＋前序 8e46b08/b6db2ab/432b9b2；工作树干净
 JDK/构建环境：Temurin OpenJDK 21.0.12.1 + Maven 3.10.0，WSL2
 完整执行命令：cd djProject && mvn -B test
 退出码：0
@@ -79,7 +79,7 @@ JDK/构建环境：Temurin OpenJDK 21.0.12.1 + Maven 3.10.0，WSL2
 
 ```text
 ### 2026-11-07 11:20｜教师 DJIProductDemo 零修改运行验证（M1 验收项1）
-Commit/工作树：d835f66 及之后
+Commit/工作树：8e46b08 及之后
 完整执行命令：java -cp target/classes com.dji.product.DJIProductDemo
 退出码：0
 观测：输出9架无人机完整安装/演示信息，序列号 DJI-00000001..09 由单例自动分配；
