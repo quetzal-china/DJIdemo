@@ -87,7 +87,7 @@ Swing GUI：`com.dji.ui` 包，`DJIOrderApp`（main 入口，CLI 参数可选文
 - `ProductionWorker`：后台逐单生产，`publish()` 逐单回传进度（"生产进行中 i/N"），幂等跳过由服务层保证；
 - `setBusy()`：任务中禁用 5 个重入按钮；状态栏常驻，弹窗仅用于文件级加载失败（含排查建议）；
 - 详情 Tab 展示全部候选促销（[候选]/[兜底]/←最优）与生产任务 SN 列表、失败原因与补产提示。
-**测试事实**：`OrderTableModelTest` 4 项无头验证 + GUI 冒烟（WSLg 真实启动，第二次起零异常）；**G1–G7 交互验收留待用户实机**（诚实披露：本环境截屏不可用）。
+**测试事实**：`OrderTableModelTest` 4 项无头验证 + GUI 冒烟（WSLg 真实启动，第二次起零异常）；G1–G7 已由提交者实机验收通过（13 张截图见 docs/evidence/，登记见 VERIFICATION.md）。
 **学习锚点**：
 1. 为什么 `promoCache::get` 直接当 `Function<Order,...>` 传给汇总服务会埋雷（Map.get 收 Object → 键型错误编译不报错）——GUI 冒烟抓出的真实 NPE；
 2. SwingWorker 三段式：doInBackground(后台)/process(EDT 增量)/done(EDT 终态)；为什么按钮要 setBusy 防重入；
@@ -96,5 +96,5 @@ Swing GUI：`com.dji.ui` 包，`DJIOrderApp`（main 入口，CLI 参数可选文
 ## 终验状态（M8）
 
 - `mvn -B clean test` → 62/62 全绿（退出码 0）；
-- 需求追踪矩阵（`docs/01-需求追踪矩阵.md`）每项均映射真实类#方法与测试名；G1–G7 标注"待用户实机验收"；
+- 需求追踪矩阵（`docs/01-需求追踪矩阵.md`）每项均映射真实类#方法与测试名；G1–G7 已全部实机通过（截图佐证）；
 - 教师文件零改动可由 `git diff f9ffbea -- <教师文件>` 复核。

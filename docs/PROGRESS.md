@@ -1,6 +1,6 @@
 # PROGRESS｜模块交付事实日志
 
-- 当前阶段：**M1–M8 全部完成**（M7 GUI 代码+冒烟验证；G1–G7 交互验收待用户实机；M8 文档齐备）
+- 当前阶段：**全部完成**（M1–M8 实施 + GUI G1–G7 实机验收通过 + 已推送 GitHub：main=完整实施史，planning-archive=规划期快照）
 - 当前真实 Git commit：见 `git log`（M7、M8 提交追加于 7b78546/0c7ed02 之后）；工作树干净
 - 实际完成的源代码改动：M7 新增 `ui/`（DJIOrderApp/MainFrame/OrderTableModel + 测试）；M8 新增 README.md、docs/AI使用说明.md、矩阵状态更新；教师 8 个源文件**零改动**（git diff f9ffbea 为空）
 - 最新验证状态：`mvn -B clean test` 退出码 0，Tests run: 62, Failures: 0, Errors: 0（2026-11-07）
