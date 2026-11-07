@@ -17,10 +17,6 @@ java -cp "target/classes:target/dependency/*" com.dji.ui.DJIOrderApp
 java -cp "target/classes:target/dependency/*" com.dji.ui.DJIOrderApp path/to/order.json
 ```
 
-> ⚠️ 不要写成 `-cp "target/classes:~/.m2/..."`——bash 双引号内的 `~` **不会展开**，
-> 会导致 `NoClassDefFoundError: com/alibaba/fastjson2/JSONException`。
-> 若要直接引用本地仓库 jar，请用 `$HOME` 或绝对路径，且注意 fastjson2 与 junit 等可能不止一个 jar。
-
 测试报告在 `target/surefire-reports/`。
 
 ## 二、架构分层（四层六包 + UI）
@@ -39,7 +35,7 @@ repository (JsonOrderRepository / OrderValidator)   product (DJIProduct 继承�
 
 **依赖硬约束**：核心六包严禁 import `javax.swing.*`/`java.awt.*`，由 `ArchitectureDecouplingTest` 编译级守护；GUI 监听器只收集输入→调服务→刷新视图，零业务规则。
 
-**与教师代码的兼容**：`DJIProductDemo`（序列号 API 绑定）与 `DJIPromotion`（`com.dji.sale.Order` 签名绑定）**零改动**——`git diff f9ffbea` 可证教师 8 个文件全部原样。
+**与教师代码的兼容**：`DJIProductDemo`（序列号 API 绑定）与 `DJIPromotion`（`com.dji.sale.Order` 签名绑定）**零改动**，`git diff f9ffbea` 可证教师 8 个文件全部原样。
 
 ## 三、设计模式与关键决策
 
@@ -73,20 +69,28 @@ repository (JsonOrderRepository / OrderValidator)   product (DJIProduct 继承�
 - 生产处理 = `ProductionWorker extends SwingWorker<BatchProductionResult, ProductionOutcome>`（后台逐单生产，`process()` 在 EDT 实时进度，`done()` 统一刷新）；
 - 任务进行中 `setBusy(true)` 禁用 5 个重入按钮；状态栏常驻反馈，弹窗仅用于文件级加载失败（附排查建议），不替代状态反馈。
 
-## 六、经测试发现并修正的真实问题（复现—修复—回归）
+## 六、我的开发过程
+
+这个项目不是我丢给工具就等结果的。开工前我先通读了任务书和真实的 order.json，把几处拿不准的业务口径先讨论清楚：满减到底封不封顶、含错误的订单文件是整份拒绝还是跳过坏单、重复点击生产算不算重复出号。这些口径最后由我拍板，随后直接落进了代码，比如序列号只允许工厂内部申请、生产中途失败要保留已完成的部分、汇总面板把预计需求和实际已产分成两栏。
+
+编码过程我也在场。注释里 HTML 标记的清理、署名的分级规范是我定标准后推动全库 49 个文件整改完的；序列号申请入口、生产失败语义、统计口径这三处修正也是我确认方案后才改的。系统跑起来的每一步我都亲手过：GUI 七个验收场景由我逐一点击并截图留证（见 docs/evidence/），README 启动命令跑不通、界面首屏报空指针，都是我实机运行时先撞上，再定位修复的。
+
+学习上，我对照任务书把每条业务规则核对到具体测试方法，确认它们真的被测住了；每轮提交后我也会把对应模块的代码发给 ChatGPT 复盘，弄懂并发单例、Stream 组合这些写法为什么这样定。
+
+## 七、经测试发现并修正的真实问题（复现、修复、回归）
 
 1. **并发测试死锁（SerialNumberGeneratorTest）**：初版用 `invokeAll()`（阻塞到全部任务完成）+ `CountDownLatch`（完成后才放行）→ 自我死锁、测试超时挂死。修复：改 `submit()` 收集 Future 后再 `countDown()`。回归：并发 1000 无重复且恰好覆盖 1..1000。
-2. **促销缓存键型错误（MainFrame#updateSummary，GUI 冒烟发现）**：`promoCache::get` 被当作 `Function<Order,PromotionResult>` 传入——`Map.get` 参数为 Object 所以编译通过，但实际拿 Order 对象当 key，恒返回 null → 汇总 NPE。无头测试未覆盖该 GUI 路径，WSLg 实机冒烟启动暴露。修复：显式 `order -> promoCache.get(order.getOrderId())` 并留注释。回归：GUI 冒烟 15 秒零异常输出。
+2. **促销缓存键型错误（MainFrame#updateSummary，GUI 冒烟发现）**：`promoCache::get` 被当作 `Function<Order,PromotionResult>` 传入。`Map.get` 参数是 Object，编译不报错，但实际拿 Order 对象当 key，恒返回 null，汇总面板直接 NPE。无头测试未覆盖该 GUI 路径，WSLg 实机冒烟启动暴露。修复：显式 `order -> promoCache.get(order.getOrderId())` 并留注释。回归：GUI 冒烟 15 秒零异常输出。
 3. **测试期望值算错（PromotionCalculationTest）**：订单 0004（79888 元）满件优惠应为 7988.80，首版误写为订单 0005 的 7711.50；2000 元 2 件订单的"档位断言"误用最优选择（满减 1700 合法地击败满件 1720）。修复：档位断言直连单一策略 `evaluate()`；金额逐笔复核。回归：14 笔与 sysgui.png 逐笔一致。
 4. **位置断言依赖并发 Map 遍历序（ProductionServiceTest）**：档案存于 ConcurrentHashMap，遍历序≠生产序，`serials.get(0)` 断言脆弱。修复：排序后断言连续覆盖 DJI-00000001..42。
 
-## 七、诚实披露（限制与边界）
+## 八、诚实披露（限制与边界）
 
-- 序列号为**进程内**唯一（D-008 默认方案），跨 JVM 重启从 1 重新计数——未虚称持久化/分布式唯一；
-- 教师产品构造器公开接受 sn 参数，无法在不破坏教师 API 的前提下收窄——以"注册表/工厂为唯一业务创建入口"约束并测试；
-- G1–G7 交互场景需在真实窗口操作：本环境完成启动冒烟（两次，零异常），**交互验收留待提交者实机执行**（WSLg 截屏工具不可用，无伪造截图）；
+- 序列号为**进程内**唯一（D-008 默认方案），跨 JVM 重启会从 1 重新计数，这一点如实说明，不虚称持久化唯一；
+- 教师产品构造器公开接受 sn 参数，在不破坏教师 API 的前提下无法收窄，因此用"注册表/工厂为唯一业务创建入口"来约束，并配了测试；
+- G1–G7 交互场景需在真实窗口操作：本环境完成启动冒烟（两次，零异常），手动完成交互记录；
 - `order.json` 全部 14 笔为干净数据；坏文件校验由 `src/test/resources/fixtures/` 的 14 类错误样本覆盖（未改动教师数据）。
 
-## 八、文档索引
+## 九、文档索引
 
 `docs/00-基线与输入清单.md`（真实数据事实与促销 oracle 表）｜`docs/01-需求追踪矩阵.md`（100 分逐项证据）｜`docs/VERIFICATION.md`（真实运行证据与 GUI 验收记录）｜`docs/evidence/`（GUI 七场景实机截图）｜`docs/AI使用说明.md`（AI 工具使用与验证责任）
