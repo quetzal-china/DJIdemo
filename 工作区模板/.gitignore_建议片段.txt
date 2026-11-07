@@ -1,0 +1,22 @@
+# 将下列条目按实际 Java 构建工具合并进原有 .gitignore；不要不审查就覆盖旧文件
+# Maven / Gradle build
+/target/
+/build/
+/.gradle/
+/out/
+# Java
+*.class
+*.log
+# Local IDE/system workspace
+/.idea/workspace.xml
+/.idea/shelf/
+*.iml
+/.zed/
+*.swp
+.DS_Store
+Thumbs.db
+# Local secrets and private files (only if appropriate for your real repo)
+.env
+.env.*
+!.env.example
+# Do NOT exclude the teacher's required order.json, demo source or README by accident
