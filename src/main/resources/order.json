@@ -1,0 +1,328 @@
+[
+	{
+		"currency": "CNY",
+		"customerName": "张三",
+		"email": "123@123.com",
+		"items": [
+			{
+				"productType": "Mini 4 PRO",
+				"quantity": 2,
+				"totalAmount": 10180,
+				"unitPrice": 5090
+			},
+			{
+				"productType": "Avata 2",
+				"quantity": 1,
+				"totalAmount": 3988,
+				"unitPrice": 3988
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "2025102900001",
+		"phone": "86 13500000001",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 14168
+	},
+	{
+		"currency": "CNY",
+		"customerName": "李四",
+		"email": "456@456.com",
+		"items": [
+			{
+				"productType": "Neo",
+				"quantity": 1,
+				"totalAmount": 1299,
+				"unitPrice": 1299
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.673",
+		"orderId": "2025102900002",
+		"phone": "86 13500000011",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 1299
+	},
+	{
+		"currency": "CNY",
+		"customerName": "王五",
+		"email": "789@789.com",
+		"items": [
+			{
+				"productType": "Air 3S",
+				"quantity": 1,
+				"totalAmount": 9988,
+				"unitPrice": 9988
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.673",
+		"orderId": "2025102900003",
+		"phone": "86 13500000022",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 9988
+	},
+	{
+		"currency": "CNY",
+		"customerName": "赵六",
+		"email": "aaa@aaa.com",
+		"items": [
+			{
+				"productType": "Inspire 3",
+				"quantity": 1,
+				"totalAmount": 79888,
+				"unitPrice": 79888
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.673",
+		"orderId": "2025102900004",
+		"phone": "86 13500001111",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 79888
+	},
+	{
+		"currency": "CNY",
+		"customerName": "李四",
+		"email": "456@456.com",
+		"items": [
+			{
+				"productType": "Matrice 400",
+				"quantity": 1,
+				"totalAmount": 77115,
+				"unitPrice": 77115
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.673",
+		"orderId": "2025102900005",
+		"phone": "86 13500000011",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 77115
+	},
+	{
+		"currency": "CNY",
+		"customerName": "王五",
+		"email": "789@789.com",
+		"items": [
+			{
+				"productType": "T100",
+				"quantity": 5,
+				"totalAmount": 339995,
+				"unitPrice": 67999
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.673",
+		"orderId": "2025102900006",
+		"phone": "86 13500000022",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 339995
+	},
+	{
+		"currency": "USD",
+		"customerName": "John Wilson",
+		"email": "aa@aa.com",
+		"items": [
+			{
+				"productType": "Mini 4 PRO",
+				"quantity": 1,
+				"totalAmount": 998,
+				"unitPrice": 998
+			},
+			{
+				"productType": "Avata 2",
+				"quantity": 2,
+				"totalAmount": 1596,
+				"unitPrice": 798
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.673",
+		"orderId": "2025102900007",
+		"phone": "001-415-578-7342",
+		"region": "NORTH_AMERICA",
+		"status": "PENDING",
+		"totalAmount": 2594
+	},
+	{
+		"currency": "USD",
+		"customerName": "Edward Adam Davis",
+		"email": "bbb@bbb.com",
+		"items": [
+			{
+				"productType": "Inspire 3",
+				"quantity": 1,
+				"totalAmount": 15999,
+				"unitPrice": 15999
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.673",
+		"orderId": "2025102900008",
+		"phone": "001-445-578-7342",
+		"region": "NORTH_AMERICA",
+		"status": "PENDING",
+		"totalAmount": 15999
+	},
+	{
+		"currency": "USD",
+		"customerName": "‌Elizabeth Taylor",
+		"email": "ccc@ccc.com",
+		"items": [
+			{
+				"productType": "Matrice 400",
+				"quantity": 1,
+				"totalAmount": 12999,
+				"unitPrice": 12999
+			},
+			{
+				"productType": "T70",
+				"quantity": 6,
+				"totalAmount": 71994,
+				"unitPrice": 11999
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.673",
+		"orderId": "2025102900009",
+		"phone": "001-445-568-7300",
+		"region": "NORTH_AMERICA",
+		"status": "PENDING",
+		"totalAmount": 84993
+	},
+	{
+		"currency": "EUR",
+		"customerName": "Emil‌",
+		"email": "ggg@ggg.com",
+		"items": [
+			{
+				"productType": "Mini 4 PRO",
+				"quantity": 1,
+				"totalAmount": 899,
+				"unitPrice": 899
+			},
+			{
+				"productType": "Air 3S",
+				"quantity": 1,
+				"totalAmount": 998,
+				"unitPrice": 998
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.673",
+		"orderId": "2025102900010",
+		"phone": "49-176-1234567",
+		"region": "EUROPE",
+		"status": "PENDING",
+		"totalAmount": 1897
+	},
+	{
+		"currency": "EUR",
+		"customerName": "Alessio",
+		"email": "hhh@hhh.com",
+		"items": [
+			{
+				"productType": "Inspire 3",
+				"quantity": 1,
+				"totalAmount": 4999,
+				"unitPrice": 4999
+			},
+			{
+				"productType": "Mavic 4 PRO",
+				"quantity": 1,
+				"totalAmount": 1388,
+				"unitPrice": 1388
+			},
+			{
+				"productType": "T70",
+				"quantity": 4,
+				"totalAmount": 39996,
+				"unitPrice": 9999
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.673",
+		"orderId": "2025102900011",
+		"phone": "39-1234567890",
+		"region": "EUROPE",
+		"status": "PENDING",
+		"totalAmount": 46383
+	},
+	{
+		"currency": "JPY",
+		"customerName": "佐藤",
+		"email": "jjj@jjj.com",
+		"items": [
+			{
+				"productType": "Mini 4 PRO",
+				"quantity": 1,
+				"totalAmount": 559000,
+				"unitPrice": 559000
+			},
+			{
+				"productType": "Neo",
+				"quantity": 1,
+				"totalAmount": 138800,
+				"unitPrice": 138800
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.673",
+		"orderId": "2025102900012",
+		"phone": "080-1234-5678",
+		"region": "ASIA",
+		"status": "PENDING",
+		"totalAmount": 697800
+	},
+	{
+		"currency": "JPY",
+		"customerName": "伊藤",
+		"email": "zzz@zzz.com",
+		"items": [
+			{
+				"productType": "Inspire 3",
+				"quantity": 1,
+				"totalAmount": 7988800,
+				"unitPrice": 7988800
+			},
+			{
+				"productType": "T100",
+				"quantity": 4,
+				"totalAmount": 60000000,
+				"unitPrice": 15000000
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.673",
+		"orderId": "2025102900013",
+		"phone": "080-1234-4444",
+		"region": "ASIA",
+		"status": "PENDING",
+		"totalAmount": 67988800
+	},
+	{
+		"currency": "BRL",
+		"customerName": "Maria Eduarda",
+		"email": "kkk@kkk.com",
+		"items": [
+			{
+				"productType": "Air 3S",
+				"quantity": 1,
+				"totalAmount": 9999,
+				"unitPrice": 9999
+			},
+			{
+				"productType": "Matrice 400",
+				"quantity": 1,
+				"totalAmount": 78000,
+				"unitPrice": 78000
+			},
+			{
+				"productType": "T100",
+				"quantity": 2,
+				"totalAmount": 136000,
+				"unitPrice": 68000
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.673",
+		"orderId": "2025102900014",
+		"phone": "55 11 91234-5678",
+		"region": "SOUTH_AMERICA",
+		"status": "PENDING",
+		"totalAmount": 223999
+	}
+]
