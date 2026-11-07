@@ -8,14 +8,14 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * 订单聚合根（兼容教师接口 {@code com.dji.promotion.DJIPromotion} 的签名）。
+ * 订单聚合根（兼容教师接口 com.dji.promotion.DJIPromotion 的签名）。
  *
- * <p>不变量（任务 2 硬性要求，构造期强制）：订单号非空；客户/地区/币种/时间非空；
+ * 不变量（任务 2 硬性要求，构造期强制）：订单号非空；客户/地区/币种/时间非空；
  * 明细列表非空；订单总金额必须等于全部明细金额之和（scale=2、HALF_UP）。
- * 明细列表对外只读；订单状态默认 {@link OrderStatus#PENDING}，
- * 仅允许按 D-009 流转：生产成功 → {@code PROCESSED}，失败 → {@code FAILED}。</p>
+ * 明细列表对外只读；订单状态默认 OrderStatus#PENDING，
+ * 仅允许按 D-009 流转：生产成功 → PROCESSED，失败 → FAILED。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public final class Order {

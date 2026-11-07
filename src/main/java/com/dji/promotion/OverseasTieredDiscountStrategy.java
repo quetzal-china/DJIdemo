@@ -11,11 +11,11 @@ import com.dji.sale.Region;
 /**
  * 其他地区（中国大陆以外）满件折扣策略。
  *
- * <p>规则（任务书促销表，按整单商品总件数 Q 分档）：
+ * 规则（任务书促销表，按整单商品总件数 Q 分档）：
  * Q=1 → 9.5 折；Q=2 → 9 折；Q≥3 → 8.5 折（最高档封顶，D-001 理解口径）。
- * 优惠按订单原价总额计算，币种以 JSON 为准，不做汇率换算。</p>
+ * 优惠按订单原价总额计算，币种以 JSON 为准，不做汇率换算。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public class OverseasTieredDiscountStrategy implements PromotionStrategy {

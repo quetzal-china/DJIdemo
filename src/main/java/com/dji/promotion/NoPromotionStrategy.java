@@ -9,7 +9,7 @@ import com.dji.sale.PromotionType;
 /**
  * 无优惠兜底策略：订单不满足任何活动门槛时按原价结算。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public class NoPromotionStrategy implements PromotionStrategy {

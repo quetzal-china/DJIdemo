@@ -6,17 +6,17 @@ import java.util.regex.Pattern;
 /**
  * 客户值对象（不可变）。
  *
- * <p><b>零宽字符规范化（DECISIONS.md ADR-003，本次实施采用的默认方案）：</b>
- * 真实 order.json 中订单 2025102900009 客户名为 {@code \u200cElizabeth Taylor}
- * （首字符 U+200C）、2025102900010 为 {@code Emil\u200c}（尾字符 U+200C）。
- * 本对象保留 {@link #getRawName() rawName}（JSON 原文，供审计），
- * 同时提供剥离 Unicode 格式控制字符（{@code \p{Cf}}，含 U+200C/U+FEFF 等）
- * 并 trim 后的 {@link #getNormalizedName() normalizedName}，用于界面展示、
- * 关键字查询与按客户分组。</p>
+ * 零宽字符规范化（DECISIONS.md ADR-003，本次实施采用的默认方案）：
+ * 真实 order.json 中订单 2025102900009 客户名为 \u200cElizabeth Taylor
+ * （首字符 U+200C）、2025102900010 为 Emil\u200c（尾字符 U+200C）。
+ * 本对象保留 #getRawName() rawName（JSON 原文，供审计），
+ * 同时提供剥离 Unicode 格式控制字符（\p{Cf}，含 U+200C/U+FEFF 等）
+ * 并 trim 后的 #getNormalizedName() normalizedName，用于界面展示、
+ * 关键字查询与按客户分组。
  *
- * <p>不变量：normalizedName、email、phone 剥离后均非空白。</p>
+ * 不变量：normalizedName、email、phone 剥离后均非空白。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public final class Customer {

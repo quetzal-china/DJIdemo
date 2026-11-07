@@ -11,18 +11,18 @@ import com.dji.sale.ProductCategory;
 /**
  * 大疆无人机权威产品参数注册表。
  *
- * <p>严格复刻教师 {@code DJIProductDemo} 中 9 个型号的精确构造参数（含
- * {@code "Mini 4 PRO"}、{@code "Air 3S"} 原始拼写与 {@code "禅思  X5S"} 双空格），
- * 作为产品创建的唯一参数权威，避免参数在多个工厂间复制走样。</p>
+ * 严格复刻教师 DJIProductDemo 中 9 个型号的精确构造参数（含
+ * "Mini 4 PRO"、"Air 3S" 原始拼写与 "禅思  X5S" 双空格），
+ * 作为产品创建的唯一参数权威，避免参数在多个工厂间复制走样。
  *
- * <p><b>序列号封装约定（架构修正 1，见 docs/DECISIONS.md）：</b>
- * 对业务侧只暴露 {@link #createDrone(String)}，序列号由本注册表内部向
- * {@link SerialNumberGenerator} 统一申请，外部调用者无法在业务路径上指定序列号。
- * 教师 {@code DJIProduct} 系列构造器仍公开接受 {@code sn} 参数（保持教师公开 API
+ * 序列号封装约定（架构修正 1，见 docs/DECISIONS.md）：
+ * 对业务侧只暴露 #createDrone(String)，序列号由本注册表内部向
+ * SerialNumberGenerator 统一申请，外部调用者无法在业务路径上指定序列号。
+ * 教师 DJIProduct 系列构造器仍公开接受 sn 参数（保持教师公开 API
  * 兼容，无法在不破坏既有代码的前提下收窄其可见性），该封装限制在设计说明中披露；
- * 本注册表与各基地工厂是唯一合法的产品创建入口。</p>
+ * 本注册表与各基地工厂是唯一合法的产品创建入口。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public final class DroneSpecRegistry {
@@ -70,7 +70,7 @@ public final class DroneSpecRegistry {
 
 	/**
 	 * 按型号创建产品实例，序列号由注册表内部统一申请。
-	 * <p>业务调用方不得、也无法通过本方法指定序列号。</p>
+	 * 业务调用方不得、也无法通过本方法指定序列号。
 	 *
 	 * @param productType 精确产品型号，如 "Mini 4 PRO"
 	 * @return 已分配全球唯一序列号的产品实例

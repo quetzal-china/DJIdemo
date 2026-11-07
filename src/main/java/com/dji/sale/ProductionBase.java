@@ -2,10 +2,10 @@ package com.dji.sale;
 
 /**
  * 生产基地枚举（七个基地，严格对应原版任务书职责表）。
- * <p>地区×类别 → 基地的路由映射集中维护于
- * {@code com.dji.factory.ProductionRouter}，本枚举只承载基地名称。</p>
+ * 地区×类别 → 基地的路由映射集中维护于
+ * com.dji.factory.ProductionRouter，本枚举只承载基地名称。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin
  * @version 1.0
  */
 public enum ProductionBase {

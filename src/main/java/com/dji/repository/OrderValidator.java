@@ -23,18 +23,14 @@ import com.dji.sale.Region;
 /**
  * 单笔订单校验与领域对象构建器。
  *
- * <p>任务 2 校验项（任一失败即抛出携带字段名与明细序号的
- * {@link OrderValidationException}，由仓储层映射为可定位的
- * {@code OrderValidationError}）：</p>
- * <ul>
- *   <li>订单号非空且唯一（跨文件加载过程以 {@code seenOrderIds} 去重）；</li>
- *   <li>客户名/邮箱/电话、地区、币种、时间、状态必需且合法；</li>
- *   <li>明细列表非空；型号与 {@code DroneSpecRegistry} 注册拼写精确一致
- *       （"Mini 4"/"Air 3" 等近似名无效）；数量为正整数；单价非负；</li>
- *   <li>明细金额 = 单价 × 数量；订单总金额 = Σ 明细金额。</li>
- * </ul>
+ * 任务 2 校验项（任一失败即抛出携带字段名与明细序号的
+ * OrderValidationException，由仓储层映射为可定位的
+ * OrderValidationError）：
  *
- * @author liuyuxin (ZCode)
+ *   · 订单号非空且唯一（跨文件加载过程以 seenOrderIds 去重）；*   · 客户名/邮箱/电话、地区、币种、时间、状态必需且合法；*   · 明细列表非空；型号与 DroneSpecRegistry 注册拼写精确一致
+ *       （"Mini 4"/"Air 3" 等近似名无效）；数量为正整数；单价非负；*   · 明细金额 = 单价 × 数量；订单总金额 = Σ 明细金额。*
+ *
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public final class OrderValidator {

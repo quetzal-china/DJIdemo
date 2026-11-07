@@ -2,10 +2,10 @@ package com.dji.sale;
 
 /**
  * 产品类别枚举。
- * <p>与教师基础工程 {@code DJIProduct#getProductCategory()} 返回的中文类别字符串
- * 一一对应，同时与 {@code DJIFactory} 三组型号常量的分组保持一致。</p>
+ * 与教师基础工程 DJIProduct#getProductCategory() 返回的中文类别字符串
+ * 一一对应，同时与 DJIFactory 三组型号常量的分组保持一致。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin
  * @version 1.0
  */
 public enum ProductCategory {

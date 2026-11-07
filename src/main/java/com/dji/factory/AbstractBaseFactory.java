@@ -12,12 +12,12 @@ import com.dji.sale.ProductionRoutingException;
 /**
  * 生产基地工厂公共基类。
  *
- * <p>统一实现"职责范围校验 + 参数权威创建"：
+ * 统一实现"职责范围校验 + 参数权威创建"：
  * 每个基地只能创建其职责范围内的产品类别；型号必须为
- * {@link DroneSpecRegistry} 注册的精确拼写；序列号由注册表内部统一申请，
- * 工厂与业务调用方均不得指定（DECISIONS.md 架构修正 1）。</p>
+ * DroneSpecRegistry 注册的精确拼写；序列号由注册表内部统一申请，
+ * 工厂与业务调用方均不得指定（DECISIONS.md 架构修正 1）。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public abstract class AbstractBaseFactory extends DJIFactory {

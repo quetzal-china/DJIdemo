@@ -32,7 +32,7 @@ import com.dji.sale.Region;
 
 /**
  * 任务 5｜促销策略与最优选择测试。
- * <p>核心断言：真实 order.json 全部 14 笔订单的最优方案、优惠额、应付额
+ * 核心断言：真实 order.json 全部 14 笔订单的最优方案、优惠额、应付额
  * 与 sysgui.png 期望表逐笔一致（蓝图中已由静态验算复核的测试 oracle）。</p>
  */
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)

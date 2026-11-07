@@ -2,10 +2,10 @@ package com.dji.sale;
 
 /**
  * 订单领域校验异常。
- * <p>携带可定位信息：出错的字段名与（若为明细级错误）明细序号，
- * 由仓储层补充记录序号与订单号后形成结构化 {@code OrderValidationError}。</p>
+ * 携带可定位信息：出错的字段名与（若为明细级错误）明细序号，
+ * 由仓储层补充记录序号与订单号后形成结构化 OrderValidationError。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin
  * @version 1.0
  */
 public class OrderValidationException extends RuntimeException {

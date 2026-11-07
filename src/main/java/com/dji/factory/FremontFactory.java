@@ -8,7 +8,7 @@ import com.dji.sale.ProductionBase;
 /**
  * 美国加州弗里蒙特工厂：北美、南美地区消费级、行业级无人机。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin
  * @version 1.0
  */
 public class FremontFactory extends AbstractBaseFactory {

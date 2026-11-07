@@ -7,10 +7,10 @@ import java.util.Objects;
 /**
  * 促销计算结构化结果值对象（不可变）。
  *
- * <p>满足任务 5“返回结构化结果，至少包含活动名称、优惠金额、应付金额”的要求，
- * 并保证恒等式 {@code 应付金额 = 原价金额 - 优惠金额}（scale=2、HALF_UP，ADR-005）。</p>
+ * 满足任务 5“返回结构化结果，至少包含活动名称、优惠金额、应付金额”的要求，
+ * 并保证恒等式 应付金额 = 原价金额 - 优惠金额（scale=2、HALF_UP，ADR-005）。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public final class PromotionResult {

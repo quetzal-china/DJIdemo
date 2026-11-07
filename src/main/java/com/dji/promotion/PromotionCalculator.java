@@ -12,14 +12,14 @@ import com.dji.sale.PromotionType;
 /**
  * 促销计算器：对订单统一评估全部适用方案并选出最优方案。
  *
- * <p>特殊边界规则（蓝图 §6.3）：若某适用活动算出的优惠金额为 0.00
+ * 特殊边界规则（蓝图 §6.3）：若某适用活动算出的优惠金额为 0.00
  * （如大陆 1500 元订单的 0 档满减），其应付金额与"无优惠"相同；
  * 为防止 0 元减免被错误标为某种活动，0 优惠额的非"无优惠"候选不参与胜出比较，
- * 直接归入"无优惠"结算。</p>
+ * 直接归入"无优惠"结算。
  *
- * <p>本类无状态，可被 GUI 与测试并发共享。</p>
+ * 本类无状态，可被 GUI 与测试并发共享。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public final class PromotionCalculator {

@@ -13,9 +13,9 @@ import com.dji.sale.OrderItem;
 /**
  * 订单查询服务（任务 7.1/7.3/7.4/7.5 的 Stream 组合筛选主战场）。
  *
- * <p>纯业务服务，零 Swing 依赖；GUI 只收集输入并呈现结果。</p>
+ * 纯业务服务，零 Swing 依赖；GUI 只收集输入并呈现结果。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public class OrderQueryService {

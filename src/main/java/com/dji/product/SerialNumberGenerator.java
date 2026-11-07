@@ -5,15 +5,15 @@ import java.util.concurrent.atomic.AtomicLong;
 /**
  * 全球唯一产品序列号生成器（线程安全单例）。
  *
- * <p>序列号格式严格为 8 位零填充递增编号：{@code DJI-00000001} ~ {@code DJI-99999999}。
- * 使用 {@link AtomicLong} CAS 自增保证多线程并发下不重复、不跳跃；
- * 越过上限时立即抛出 {@link SerialNumberExhaustedException}，绝不回绕或重复。</p>
+ * 序列号格式严格为 8 位零填充递增编号：DJI-00000001 ~ DJI-99999999。
+ * 使用 AtomicLong CAS 自增保证多线程并发下不重复、不跳跃；
+ * 越过上限时立即抛出 SerialNumberExhaustedException，绝不回绕或重复。
  *
- * <p>边界说明（见 docs/DECISIONS.md D-008）：本单例为进程内编号器，
- * JVM 重启后从 {@code DJI-00000001} 重新计数；跨进程全局唯一超出本题范围，
- * 设计说明中如实披露，不虚称持久化唯一。</p>
+ * 边界说明（见 docs/DECISIONS.md D-008）：本单例为进程内编号器，
+ * JVM 重启后从 DJI-00000001 重新计数；跨进程全局唯一超出本题范围，
+ * 设计说明中如实披露，不虚称持久化唯一。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public final class SerialNumberGenerator {
@@ -35,7 +35,7 @@ public final class SerialNumberGenerator {
 	/**
 	 * 生成下一个全球唯一序列号。
 	 *
-	 * @return 形如 {@code DJI-00000001} 的序列号
+	 * @return 形如 DJI-00000001 的序列号
 	 * @throws SerialNumberExhaustedException 序列号已耗尽（越过 DJI-99999999）时抛出，
 	 *                                        且内部计数保持耗尽状态，不回绕
 	 */

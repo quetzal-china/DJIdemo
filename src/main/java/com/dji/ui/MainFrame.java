@@ -51,12 +51,12 @@ import com.dji.service.SystemSummary;
 /**
  * 系统主窗口（任务 6，七项界面功能）。
  *
- * <p>线程约定：全部组件更新都在事件派发线程（EDT）执行——文件加载与生产
- * 处理由 {@code SwingWorker} 在后台线程完成，经 {@code done()}/{@code process()}
+ * 线程约定：全部组件更新都在事件派发线程（EDT）执行——文件加载与生产
+ * 处理由 SwingWorker 在后台线程完成，经 done()/process()
  * 回到 EDT 刷新；任务进行中禁用"打开/生产"按钮防止并发重入。事件监听器只
- * 收集输入、调用应用服务并呈现结果，促销与路由规则全部在服务层实现。</p>
+ * 收集输入、调用应用服务并呈现结果，促销与路由规则全部在服务层实现。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public class MainFrame extends JFrame {

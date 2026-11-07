@@ -9,12 +9,12 @@ import com.dji.sale.Region;
 /**
  * 订单筛选谓词（任务 7.4：自定义函数式接口，支持组合）。
  *
- * <p>提供 {@link #and(OrderFilter)} 等缺省方法实现谓词组合，
+ * 提供 #and(OrderFilter) 等缺省方法实现谓词组合，
  * 静态工厂覆盖关键字/地区/状态三类业务条件；关键字匹配订单号与
- * <strong>规范化</strong>客户名（剥离零宽字符、忽略大小写，见 ADR-003），
- * 因此可命中 order.json 中含 U+200C 的 "Elizabeth Taylor"/"Emil"。</p>
+ * 规范化客户名（剥离零宽字符、忽略大小写，见 ADR-003），
+ * 因此可命中 order.json 中含 U+200C 的 "Elizabeth Taylor"/"Emil"。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 @FunctionalInterface

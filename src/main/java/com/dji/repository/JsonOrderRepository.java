@@ -21,13 +21,13 @@ import com.dji.sale.OrderValidationException;
 /**
  * JSON 订单文件仓储（基础设施层）。
  *
- * <p>读取策略（DECISIONS.md D-006 默认方案）：
- * {@link #loadOrders(Path)} 为"跳过单笔无效订单 + 结构化错误汇总"——
- * 顶层 JSON 语法损坏或文件不可读时整份失败（{@link OrderFileParseException}）；
+ * 读取策略（DECISIONS.md D-006 默认方案）：
+ * #loadOrders(Path) 为"跳过单笔无效订单 + 结构化错误汇总"——
+ * 顶层 JSON 语法损坏或文件不可读时整份失败（OrderFileParseException）；
  * 语法合法但个别订单校验失败时跳过该笔并记录可定位错误，有效订单照常返回。
- * {@link #loadOrdersStrict(Path)} 为整份失败模式：任一订单有误则全部拒绝。</p>
+ * #loadOrdersStrict(Path) 为整份失败模式：任一订单有误则全部拒绝。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public class JsonOrderRepository {

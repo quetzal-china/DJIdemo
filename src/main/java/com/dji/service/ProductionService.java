@@ -22,22 +22,19 @@ import com.dji.sale.ProductionTask;
 /**
  * 生产编排服务（任务 4/6 的服务层支撑）。
  *
- * <p><b>生产一致性语义（DECISIONS.md D-007 + 架构修正 2）：</b></p>
- * <ol>
- *   <li><b>路由前置原子校验</b>：生产前先对整单全部明细做路由校验，
- *       任一明细无法路由则整单失败，不消耗任何序列号；</li>
- *   <li><b>中途失败不虚报</b>：产品创建或生产流程中途异常时，
+ * 生产一致性语义（DECISIONS.md D-007 + 架构修正 2）：
+ *
+ *   · 路由前置原子校验：生产前先对整单全部明细做路由校验，
+ *       任一明细无法路由则整单失败，不消耗任何序列号；*   · 中途失败不虚报：产品创建或生产流程中途异常时，
  *       已完成明细的任务与序列号如实保留（部分成功 ≠ 整单成功），
- *       订单标记 FAILED，失败原因入档；已消耗序列号不回收倒退；</li>
- *   <li><b>幂等重试</b>：已 SUCCESS 的订单再次处理直接跳过并返回既有任务
+ *       订单标记 FAILED，失败原因入档；已消耗序列号不回收倒退；*   · 幂等重试：已 SUCCESS 的订单再次处理直接跳过并返回既有任务
  *       （不重复消耗序列号、不重复累加基地产量）；FAILED/PARTIAL 订单重试时
- *       只补产缺失数量，已完成明细不重复生产。</li>
- * </ol>
+ *       只补产缺失数量，已完成明细不重复生产。*
  *
- * <p>统计口径（架构修正 3）：{@link #producedUnitsByBase()} 只统计
- * 实际生产成功的架数，与 {@code OrderStatisticsService} 的预计需求量分列。</p>
+ * 统计口径（架构修正 3）：#producedUnitsByBase() 只统计
+ * 实际生产成功的架数，与 OrderStatisticsService 的预计需求量分列。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public class ProductionService {

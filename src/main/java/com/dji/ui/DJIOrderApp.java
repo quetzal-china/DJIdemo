@@ -7,17 +7,17 @@ import java.nio.file.Path;
 /**
  * 系统主入口（任务 6）。
  *
- * <p>启动方式：</p>
- * <pre>
+ * 启动方式：
+ *
  *   mvn -q compile
  *   java -cp target/classes com.dji.ui.DJIOrderApp                    # 默认尝试 src/main/resources/order.json
  *   java -cp target/classes com.dji.ui.DJIOrderApp D:\path\order.json # 命令行参数指定订单文件
- * </pre>
  *
- * <p>窗口在 EDT 创建与显示；若默认/指定文件存在则立即触发 SwingWorker
- * 异步加载，文件缺失时保持空界面等待用户通过"打开订单文件"选择。</p>
  *
- * @author liuyuxin (ZCode)
+ * 窗口在 EDT 创建与显示；若默认/指定文件存在则立即触发 SwingWorker
+ * 异步加载，文件缺失时保持空界面等待用户通过"打开订单文件"选择。
+ *
+ * @author liuyuxin
  * @version 1.0
  */
 public class DJIOrderApp {

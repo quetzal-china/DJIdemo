@@ -5,10 +5,10 @@ import java.math.RoundingMode;
 
 /**
  * 订单币种枚举。
- * <p>币种以 JSON 原文为准，系统不做任何汇率换算（原版任务书硬约束）。
- * 金额展示格式与参考界面一致：{@code CNY 1299.00}（币种代码 + 两位小数）。</p>
+ * 币种以 JSON 原文为准，系统不做任何汇率换算（原版任务书硬约束）。
+ * 金额展示格式与参考界面一致：CNY 1299.00（币种代码 + 两位小数）。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin
  * @version 1.0
  */
 public enum Currency {

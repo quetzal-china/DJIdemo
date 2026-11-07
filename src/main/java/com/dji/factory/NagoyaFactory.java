@@ -8,7 +8,7 @@ import com.dji.sale.ProductionBase;
 /**
  * 日本名古屋工厂：亚太地区消费级、行业级无人机。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin
  * @version 1.0
  */
 public class NagoyaFactory extends AbstractBaseFactory {

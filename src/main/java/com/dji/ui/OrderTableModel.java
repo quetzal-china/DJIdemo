@@ -11,12 +11,12 @@ import com.dji.sale.PromotionResult;
 /**
  * 订单列表表格模型（任务 6.2）。
  *
- * <p>列定义与参考界面 sysgui.png 一致；促销方案/优惠金额/应付金额三列
+ * 列定义与参考界面 sysgui.png 一致；促销方案/优惠金额/应付金额三列
  * 由外部注入的解析函数（订单号 → 最优促销结果）提供，模型不实现任何
  * 促销规则（UI 与业务解耦）。本类不创建任何 AWT 对等组件，可在
- * 无头（headless）JUnit 环境直接测试。</p>
+ * 无头（headless）JUnit 环境直接测试。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public class OrderTableModel extends AbstractTableModel {

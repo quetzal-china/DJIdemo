@@ -8,7 +8,7 @@ import com.dji.sale.ProductionBase;
 /**
  * 顺德工厂：全球所有地区的农业及载重级无人机。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin
  * @version 1.0
  */
 public class ShundeFactory extends AbstractBaseFactory {

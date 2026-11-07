@@ -19,13 +19,13 @@ import com.dji.sale.Region;
 /**
  * 订单统计服务（任务 7.2/7.3/7.6：groupingBy 分组统计与明细扁平化）。
  *
- * <p>统计口径（架构修正 3）：本服务产出的
- * {@link #countUnitsByProductionBase(List, ProductionRouter)} 是
- * <strong>预计基地需求量</strong>（订单明细静态汇总）；
- * 实际生产成功量由 {@code ProductionService#producedUnitsByBase()} 提供，
- * 两者在汇总面板中分开展示，未执行生产时不得把预计量当作已产量。</p>
+ * 统计口径（架构修正 3）：本服务产出的
+ * #countUnitsByProductionBase(List, ProductionRouter) 是
+ * 预计基地需求量（订单明细静态汇总）；
+ * 实际生产成功量由 ProductionService#producedUnitsByBase() 提供，
+ * 两者在汇总面板中分开展示，未执行生产时不得把预计量当作已产量。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public class OrderStatisticsService {
@@ -74,7 +74,7 @@ public class OrderStatisticsService {
 	}
 
 	/**
-	 * 扁平化全部订单明细，统计各生产基地承接的产品<strong>预计需求</strong>总架数
+	 * 扁平化全部订单明细，统计各生产基地承接的产品预计需求总架数
 	 * （flatMap + groupingBy + summingInt；架构修正 3：这是计划口径）。
 	 *
 	 * @param orders 订单列表

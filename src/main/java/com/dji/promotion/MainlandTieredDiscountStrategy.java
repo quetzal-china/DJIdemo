@@ -11,10 +11,10 @@ import com.dji.sale.Region;
 /**
  * 中国大陆满件折扣策略。
  *
- * <p>规则（任务书促销表，按整单商品总件数 Q 分档）：
- * Q=1 → 9 折；Q=2 → 8.6 折；Q=3 → 8.2 折；Q≥4 → 8 折（最高档封顶，D-001 理解口径）。</p>
+ * 规则（任务书促销表，按整单商品总件数 Q 分档）：
+ * Q=1 → 9 折；Q=2 → 8.6 折；Q=3 → 8.2 折；Q≥4 → 8 折（最高档封顶，D-001 理解口径）。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public class MainlandTieredDiscountStrategy implements PromotionStrategy {

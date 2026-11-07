@@ -11,13 +11,13 @@ import com.dji.sale.Region;
 /**
  * 中国大陆满额立减策略。
  *
- * <p>规则（任务书促销表）：每满 2000 元减 300 元，不设档数上限
- * （DECISIONS.md D-001 默认方案：按正文与 sysgui.png 实算结果实现无人为封顶）。</p>
+ * 规则（任务书促销表）：每满 2000 元减 300 元，不设档数上限
+ * （DECISIONS.md D-001 默认方案：按正文与 sysgui.png 实算结果实现无人为封顶）。
  *
- * <p>适用硬性防线：仅当订单地区为中国大陆<strong>且</strong>币种为 CNY 时适用
- * （满减金额单位为人民币元；不对外币订单按人民币阈值满减）。</p>
+ * 适用硬性防线：仅当订单地区为中国大陆且币种为 CNY 时适用
+ * （满减金额单位为人民币元；不对外币订单按人民币阈值满减）。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public class MainlandFullReductionStrategy implements PromotionStrategy {

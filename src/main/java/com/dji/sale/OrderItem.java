@@ -7,11 +7,11 @@ import java.util.Objects;
 /**
  * 订单明细值对象（不可变）。
  *
- * <p>不变量（任务 2 硬性要求，构造期强制）：
+ * 不变量（任务 2 硬性要求，构造期强制）：
  * 明细序号 ≥ 1；产品型号非空且类别已解析；数量为正整数；单价非负；
- * 明细金额必须等于单价 × 数量（金额口径 scale=2、HALF_UP，见 ADR-005）。</p>
+ * 明细金额必须等于单价 × 数量（金额口径 scale=2、HALF_UP，见 ADR-005）。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public final class OrderItem {

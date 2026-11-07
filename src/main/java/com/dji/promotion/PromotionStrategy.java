@@ -9,12 +9,12 @@ import com.dji.sale.PromotionType;
 /**
  * 促销策略接口（策略模式，任务 5）。
  *
- * <p>双层设计（DECISIONS.md ADR-004）：继承教师接口 {@link DJIPromotion}
- * 保持签名兼容（{@code calculatePromotion(Order)} 返回减免额），
- * 同时提供结构化计算 {@link #evaluate(Order)}，返回含活动名称、
- * 优惠金额与应付金额的 {@link PromotionResult}。</p>
+ * 双层设计（DECISIONS.md ADR-004）：继承教师接口 DJIPromotion
+ * 保持签名兼容（calculatePromotion(Order) 返回减免额），
+ * 同时提供结构化计算 #evaluate(Order)，返回含活动名称、
+ * 优惠金额与应付金额的 PromotionResult。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public interface PromotionStrategy extends DJIPromotion {

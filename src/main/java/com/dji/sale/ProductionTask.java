@@ -5,11 +5,11 @@ import java.util.List;
 /**
  * 生产任务值对象（不可变）。
  *
- * <p>记录一笔订单明细在某个生产基地的生产结果：计划数量与实际成功分配的
- * 序列号列表。{@code serialNumbers.size() == quantity} 表示该明细生产完成；
- * 小于则为部分完成（生产中途失败，见 DECISIONS.md 架构修正 2）。</p>
+ * 记录一笔订单明细在某个生产基地的生产结果：计划数量与实际成功分配的
+ * 序列号列表。serialNumbers.size() == quantity 表示该明细生产完成；
+ * 小于则为部分完成（生产中途失败，见 DECISIONS.md 架构修正 2）。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public final class ProductionTask {

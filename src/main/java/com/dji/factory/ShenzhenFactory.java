@@ -8,7 +8,7 @@ import com.dji.sale.ProductionBase;
 /**
  * 深圳基地工厂：中国大陆消费级无人机。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin
  * @version 1.0
  */
 public class ShenzhenFactory extends AbstractBaseFactory {

@@ -8,7 +8,7 @@ import com.dji.sale.ProductionBase;
 /**
  * 德国斯图加特基地工厂：欧洲地区行业级无人机。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin
  * @version 1.0
  */
 public class StuttgartFactory extends AbstractBaseFactory {

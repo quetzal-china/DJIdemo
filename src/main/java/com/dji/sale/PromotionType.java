@@ -3,14 +3,14 @@ package com.dji.sale;
 /**
  * 促销活动类型枚举。
  *
- * <p>并列优先规则（任务 5）：应付金额并列时依次优先选择
- * 满额立减 → 满件折扣 → 无优惠，由 {@code tieBreakRank} 表达（数值越小越优先）。</p>
+ * 并列优先规则（任务 5）：应付金额并列时依次优先选择
+ * 满额立减 → 满件折扣 → 无优惠，由 tieBreakRank 表达（数值越小越优先）。
  *
- * <p><b>归属包说明</b>：按 DECISIONS.md 实施备注，本枚举置于领域层
- * {@code com.dji.sale}（领域结果对象 PromotionResult 需引用它），
- * 以保持依赖单向 PROMO→SALE，不构成架构方向变更。</p>
+ * 归属包说明：按 DECISIONS.md 实施备注，本枚举置于领域层
+ * com.dji.sale（领域结果对象 PromotionResult 需引用它），
+ * 以保持依赖单向 PROMO→SALE，不构成架构方向变更。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin (Gemini 4 Argon)
  * @version 1.0
  */
 public enum PromotionType {
@@ -35,7 +35,7 @@ public enum PromotionType {
 		this.displayName = displayName;
 	}
 
-	/** @return 并列优先级（1=满额立减 &lt; 2=满件折扣 &lt; 3=无优惠）。 */
+	/** @return 并列优先级（1=满额立减 < 2=满件折扣 < 3=无优惠）。 */
 	public int getTieBreakRank() {
 		return tieBreakRank;
 	}

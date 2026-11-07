@@ -2,11 +2,11 @@ package com.dji.sale;
 
 /**
  * 订单地区枚举。
- * <p>枚举常量名严格对齐真实 {@code order.json} 的 {@code region} 字段取值
- * （如亚太地区在 JSON 中拼作 {@code ASIA}）；中文显示名对齐参考界面 sysgui.png。
- * 解析采用严格模式：未知取值立即抛出 {@link OrderValidationException}，绝不静默映射。</p>
+ * 枚举常量名严格对齐真实 order.json 的 region 字段取值
+ * （如亚太地区在 JSON 中拼作 ASIA）；中文显示名对齐参考界面 sysgui.png。
+ * 解析采用严格模式：未知取值立即抛出 OrderValidationException，绝不静默映射。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin
  * @version 1.0
  */
 public enum Region {

@@ -2,11 +2,11 @@ package com.dji.sale;
 
 /**
  * 订单状态枚举。
- * <p>真实 {@code order.json} 中仅出现 {@code PENDING}；按 DECISIONS.md D-009
+ * 真实 order.json 中仅出现 PENDING；按 DECISIONS.md D-009
  * （本次实施采用的默认方案，非任务书明文规定）补充生产模拟所需的
- * {@code PROCESSED}/{@code FAILED} 两个运行期状态以支持 GUI 生产流转与状态筛选。</p>
+ * PROCESSED/FAILED 两个运行期状态以支持 GUI 生产流转与状态筛选。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin
  * @version 1.0
  */
 public enum OrderStatus {

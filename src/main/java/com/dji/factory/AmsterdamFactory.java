@@ -8,7 +8,7 @@ import com.dji.sale.ProductionBase;
 /**
  * 荷兰阿姆斯特丹基地工厂：欧洲地区消费级无人机。
  *
- * @author liuyuxin (ZCode)
+ * @author liuyuxin
  * @version 1.0
  */
 public class AmsterdamFactory extends AbstractBaseFactory {
