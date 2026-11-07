@@ -77,3 +77,24 @@
 ## M7 预告（待启动）
 
 Swing GUI：`com.dji.ui` 包，`DJIOrderApp`（main 入口，CLI 参数可选文件）+ `MainFrame` + TableModels + SwingWorker 异步（加载/生产）。视觉方案已提交项目所有者决策后开工。
+
+## M7｜Swing GUI 与异步任务（任务 6，20 分）
+
+**文件**：`src/main/java/com/dji/ui/` —— `DJIOrderApp`（main 入口：EventQueue.invokeLater，args 或默认路径）、`MainFrame`（工具栏+订单表+三 Tab 详情/汇总/错误+状态栏）、`OrderTableModel`（10 列，促销列经 Function 注入）。
+**调用链**：按钮/表格选择（EDT）→ SwingWorker.doInBackground（后台）→ `OrderQueryService`/`PromotionCalculator`/`ProductionService`/`OrderStatisticsService` → `done()`/`process()`（EDT）→ TableModel/文本区刷新。
+**关键实现**：
+- `OrderLoadWorker`：后台读 JSON+预计算促销缓存，done() 一次刷全视图；
+- `ProductionWorker`：后台逐单生产，`publish()` 逐单回传进度（"生产进行中 i/N"），幂等跳过由服务层保证；
+- `setBusy()`：任务中禁用 5 个重入按钮；状态栏常驻，弹窗仅用于文件级加载失败（含排查建议）；
+- 详情 Tab 展示全部候选促销（[候选]/[兜底]/←最优）与生产任务 SN 列表、失败原因与补产提示。
+**测试事实**：`OrderTableModelTest` 4 项无头验证 + GUI 冒烟（WSLg 真实启动，第二次起零异常）；**G1–G7 交互验收留待用户实机**（诚实披露：本环境截屏不可用）。
+**学习锚点**：
+1. 为什么 `promoCache::get` 直接当 `Function<Order,...>` 传给汇总服务会埋雷（Map.get 收 Object → 键型错误编译不报错）——GUI 冒烟抓出的真实 NPE；
+2. SwingWorker 三段式：doInBackground(后台)/process(EDT 增量)/done(EDT 终态)；为什么按钮要 setBusy 防重入；
+3. TableModel 把"数据"与"JTable 视图"分离后，无头 JUnit 也能测 GUI 数据映射。
+
+## 终验状态（M8）
+
+- `mvn -B clean test` → 62/62 全绿（退出码 0）；
+- 需求追踪矩阵（`docs/01-需求追踪矩阵.md`）每项均映射真实类#方法与测试名；G1–G7 标注"待用户实机验收"；
+- 教师文件零改动可由 `git diff 8f6993b -- <教师文件>` 复核。

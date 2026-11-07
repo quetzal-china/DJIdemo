@@ -98,3 +98,32 @@ Commit/工作树：d835f66 及之后
    对应策略 evaluate()，而非最优选择结果。
 3. **ProductionServiceTest 位置断言依赖 Map 遍历序**：档案存于
    ConcurrentHashMap，遍历顺序与生产顺序无关；改为排序后断言连续覆盖 1..42。
+
+```text
+### 2026-11-07 11:5x｜M7 GUI 冒烟启动（WSLg 实机）
+Commit/工作树：M7 提交
+JDK/构建环境：Temurin 21 + WSLg（DISPLAY=:0）
+完整执行命令：DISPLAY=:0 timeout 15 java -cp "target/classes:<fastjson2>" com.dji.ui.DJIOrderApp
+退出码：124（进程存活至超时被杀 = 窗口正常运行）
+通过/失败/跳过数：不适用
+关键结果：第一次运行暴露 MainFrame#updateSummary NPE——promoCache::get 被用作
+  Function<Order,PromotionResult>（Map.get 收 Object，键型错误编译不报错）；
+  修复为 order -> promoCache.get(order.getOrderId()) 后重跑：15 秒零异常输出；
+  第三次运行 9 秒后尝试 xwd 截屏失败（WSLg X 服务 X_GetImage BadMatch，无截屏能力）
+对应原版需求：任务 6（G1 启动加载场景的启动部分）
+是否需要 GUI 实机验证：是——G1–G7 交互验收待提交者实机执行（无伪造截图）
+结论：启动冒烟实际通过；交互验收待用户
+```
+
+```text
+### 2026-11-07 12:0x｜M1–M7 最终全量回归（含 OrderTableModelTest）
+Commit/工作树：M7/M8 提交
+完整执行命令：mvn -B clean test
+退出码：0
+通过/失败/跳过数：Tests run: 62, Failures: 0, Errors: 0, Skipped: 0
+关键结果：新增 ui.OrderTableModelTest 4 项（表格结构/单元格值/占位符与状态刷新/筛选联动）；
+  C1 约束 grep：sale/promotion/repository/service 包 double|float 零命中
+对应原版需求：任务 1–5、7、8 全量；任务 6 模型层
+是否需要 GUI 实机验证：交互场景待用户
+结论：实际通过
+```

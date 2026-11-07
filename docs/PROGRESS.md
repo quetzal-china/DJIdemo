@@ -1,11 +1,38 @@
 # PROGRESS｜模块交付事实日志
 
-- 当前阶段：**M1–M6 已完成并全量回归通过（58 测试全绿）**；M7（Swing GUI）待用户确认视觉方案后启动
-- 当前真实 Git commit：`64e718b`（M6）+ 文档提交待追加；工作树干净
-- 实际完成的源代码改动：新增 31 个主代码文件 + 10 个测试类 + 3 个坏数据 fixture；教师 7 个源文件**零改动**
-- 最新验证状态：`mvn -B test` 退出码 0，Tests run: 58, Failures: 0, Errors: 0（2026-11-07）
-- 阻断项：无
-- 下一步：M7 Swing GUI（先提交视觉/布局/交互方案供项目所有者决策——按实施指令的强制暂停点）
+- 当前阶段：**M1–M8 全部完成**（M7 GUI 代码+冒烟验证；G1–G7 交互验收待用户实机；M8 文档齐备）
+- 当前真实 Git commit：见 `git log`（M7、M8 提交追加于 64e718b/d3101c3 之后）；工作树干净
+- 实际完成的源代码改动：M7 新增 `ui/`（DJIOrderApp/MainFrame/OrderTableModel + 测试）；M8 新增 README.md、docs/AI使用说明.md、矩阵状态更新；教师 8 个源文件**零改动**（git diff 8f6993b 为空）
+- 最新验证状态：`mvn -B clean test` 退出码 0，Tests run: 62, Failures: 0, Errors: 0（2026-11-07）
+- 阻断项：无（唯一开放项 = 用户实机执行 GUI 七场景验收）
+- 下一步：用户实机验收 → （可选）Zed 终审（提示词 04）→ 用户推送 GitHub 与提交
+
+## 模块交付记录（续）
+
+```text
+### 2026-11-07｜M7：Swing GUI 与异步任务
+原版评分映射：任务6(20分)
+Git 提交 SHA：见 git log（M7 提交）
+真正修改的文件：新增 ui/{DJIOrderApp, MainFrame, OrderTableModel} + ui/OrderTableModelTest
+执行的命令与退出码：mvn -B test → 0（62 tests）；GUI 冒烟 ×2（第二次零异常，第一次抓出 promoCache::get 键型 NPE 已修复）
+真实测试摘要：OrderTableModelTest 4 项无头验证（14行10列/单元格值与促销 oracle 一致/占位符/筛选联动）；
+  SwingWorker×2 + setBusy 防重入 + 常驻状态栏；监听器零业务规则
+设计偏差：详情/汇总/错误用三个 Tab 的文本区呈现（计划中的 OrderItemTableModel/ProductionTaskTableModel
+  以格式化文本区替代，信息等价可复制）——布局细节自主权范围内
+伴学交接：HANDOFF §M7
+下一步：M8
+
+### 2026-11-07｜M8：全量回归、设计说明、AI 使用说明
+原版评分映射：任务8(5分)+交付材料
+Git 提交 SHA：见 git log（M8 提交）
+真正修改的文件：README.md（设计说明+运行说明）、docs/AI使用说明.md、docs/01-需求追踪矩阵.md（全量状态更新）、
+  docs/PROGRESS.md、docs/VERIFICATION.md、docs/HANDOFF_FOR_CHATGPT.md
+执行的命令与退出码：mvn -B clean test → 0（62 tests）
+真实测试摘要：62/62 全绿；C1 grep 零浮点；教师文件 diff 为空；需求追踪矩阵每项映射真实类#方法与测试名
+设计偏差：无
+伴学交接：HANDOFF §M7
+下一步：用户实机验收 G1–G7；可选 Zed 终审
+```
 
 ## 模块交付记录
 
