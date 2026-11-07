@@ -1,0 +1,279 @@
+[
+	{
+		"currency": "CNY",
+		"customerName": "基线有效客户",
+		"email": "valid@valid.com",
+		"items": [
+			{
+				"productType": "Mini 4 PRO",
+				"quantity": 1,
+				"totalAmount": 5090,
+				"unitPrice": 5090
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "VALID001",
+		"phone": "86 13500000000",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 5090
+	},
+	{
+		"currency": "CNY",
+		"customerName": "重复单号客户",
+		"email": "dup@dup.com",
+		"items": [
+			{
+				"productType": "Neo",
+				"quantity": 1,
+				"totalAmount": 1299,
+				"unitPrice": 1299
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "VALID001",
+		"phone": "86 13500000000",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 1299
+	},
+	{
+		"currency": "CNY",
+		"customerName": "",
+		"email": "blank@blank.com",
+		"items": [
+			{
+				"productType": "Neo",
+				"quantity": 1,
+				"totalAmount": 1299,
+				"unitPrice": 1299
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "BLANK_CUST",
+		"phone": "86 13500000000",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 1299
+	},
+	{
+		"currency": "CNY",
+		"customerName": "缺邮箱客户",
+		"email": "",
+		"items": [
+			{
+				"productType": "Neo",
+				"quantity": 1,
+				"totalAmount": 1299,
+				"unitPrice": 1299
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "MISSING_EMAIL",
+		"phone": "86 13500000000",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 1299
+	},
+	{
+		"currency": "CNY",
+		"customerName": "未知地区客户",
+		"email": "region@region.com",
+		"items": [
+			{
+				"productType": "Neo",
+				"quantity": 1,
+				"totalAmount": 1299,
+				"unitPrice": 1299
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "BAD_REGION",
+		"phone": "86 13500000000",
+		"region": "AFRICA",
+		"status": "PENDING",
+		"totalAmount": 1299
+	},
+	{
+		"currency": "GBP",
+		"customerName": "未知币种客户",
+		"email": "ccy@ccy.com",
+		"items": [
+			{
+				"productType": "Neo",
+				"quantity": 1,
+				"totalAmount": 1299,
+				"unitPrice": 1299
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "BAD_CURRENCY",
+		"phone": "86 13500000000",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 1299
+	},
+	{
+		"currency": "CNY",
+		"customerName": "非法状态客户",
+		"email": "status@status.com",
+		"items": [
+			{
+				"productType": "Neo",
+				"quantity": 1,
+				"totalAmount": 1299,
+				"unitPrice": 1299
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "BAD_STATUS",
+		"phone": "86 13500000000",
+		"region": "CHINA_MAINLAND",
+		"status": "SHIPPED",
+		"totalAmount": 1299
+	},
+	{
+		"currency": "CNY",
+		"customerName": "坏时间客户",
+		"email": "date@date.com",
+		"items": [
+			{
+				"productType": "Neo",
+				"quantity": 1,
+				"totalAmount": 1299,
+				"unitPrice": 1299
+			}
+		],
+		"orderDate": "2025/10/29 15:28:57",
+		"orderId": "BAD_DATE",
+		"phone": "86 13500000000",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 1299
+	},
+	{
+		"currency": "CNY",
+		"customerName": "近似型号客户",
+		"email": "type@type.com",
+		"items": [
+			{
+				"productType": "Mini 4",
+				"quantity": 1,
+				"totalAmount": 5090,
+				"unitPrice": 5090
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "BAD_TYPE",
+		"phone": "86 13500000000",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 5090
+	},
+	{
+		"currency": "CNY",
+		"customerName": "零数量客户",
+		"email": "qty@qty.com",
+		"items": [
+			{
+				"productType": "Neo",
+				"quantity": 0,
+				"totalAmount": 0,
+				"unitPrice": 1299
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "QTY_ZERO",
+		"phone": "86 13500000000",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 0
+	},
+	{
+		"currency": "CNY",
+		"customerName": "负单价客户",
+		"email": "price@price.com",
+		"items": [
+			{
+				"productType": "Neo",
+				"quantity": 1,
+				"totalAmount": -1299,
+				"unitPrice": -1299
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "PRICE_NEG",
+		"phone": "86 13500000000",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": -1299
+	},
+	{
+		"currency": "CNY",
+		"customerName": "明细金额不符客户",
+		"email": "item@item.com",
+		"items": [
+			{
+				"productType": "Neo",
+				"quantity": 2,
+				"totalAmount": 500,
+				"unitPrice": 100
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "ITEM_MISMATCH",
+		"phone": "86 13500000000",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 500
+	},
+	{
+		"currency": "CNY",
+		"customerName": "订单总额不符客户",
+		"email": "order@order.com",
+		"items": [
+			{
+				"productType": "Neo",
+				"quantity": 1,
+				"totalAmount": 1299,
+				"unitPrice": 1299
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "ORDER_MISMATCH",
+		"phone": "86 13500000000",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 1500
+	},
+	{
+		"currency": "CNY",
+		"customerName": "空明细客户",
+		"email": "empty@empty.com",
+		"items": [],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "EMPTY_ITEMS",
+		"phone": "86 13500000000",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING",
+		"totalAmount": 0
+	},
+	{
+		"currency": "CNY",
+		"customerName": "缺总额客户",
+		"email": "nototal@nototal.com",
+		"items": [
+			{
+				"productType": "Neo",
+				"quantity": 1,
+				"totalAmount": 1299,
+				"unitPrice": 1299
+			}
+		],
+		"orderDate": "2025-10-29 15:28:57.638",
+		"orderId": "MISSING_TOTAL",
+		"phone": "86 13500000000",
+		"region": "CHINA_MAINLAND",
+		"status": "PENDING"
+	}
+]
